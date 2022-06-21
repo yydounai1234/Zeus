@@ -1,0 +1,31 @@
+{
+  "name": "zeus-plugin",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:zeus": "vite build -w --config ./vite.plugin.config.ts",
+    "dev:sw": "vite build -w --config ./vite.sw.config.ts",
+    "build:zeus": "tsc --emitDeclarationOnly && vite build --config ./vite.plugin.config.ts",
+    "build:sw": "tsc --emitDeclarationOnly && vite build --config ./vite.sw.config.ts",
+    "type": "tsc --emitDeclarationOnly"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  },
+  "main": "./dist/zeus.umd.js",
+  "module": "./dist/zeus.es.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/zeus.es.js",
+      "require": "./dist/zeus.umd.js"
+    }
+  },
+  "dependencies": {
+    "parse5": "^7.0.0",
+    "terser": "^5.14.1",
+    "zeus-sw": "workspace:^1.0.0"
+  }
+}
