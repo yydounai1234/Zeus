@@ -1,0 +1,24 @@
+{
+  "name": "zeus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "demo:dev": "pnpm --filter zeus-vite run dev",
+    "demo:build": "pnpm --filter zeus-vite run build",
+    "demo:preview": "pnpm --filter zeus-vite run preview",
+    "plugin:dev": "pnpm --filter zeus-plugin run dev",
+    "plugin:build": "pnpm --filter zeus-plugin run build",
+    "plugin:type": "pnpm --filter zeus-plugin run type"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yydounai1234/Zeus.git"
+  },
+  "author": "794095300@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yydounai1234/Zeus/issues"
+  },
+  "homepage": "https://github.com/yydounai1234/Zeus#readme"
+}

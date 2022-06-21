@@ -1,0 +1,32 @@
+{
+  "name": "zeus-plugin",
+  "private": false,
+  "version": "1.0.0",
+  "files": [
+    "dist/*.js",
+    "types/*.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yydounai1234/Zeus.git"
+  },
+  "scripts": {
+    "dev": "vite build -w",
+    "build": "vite build",
+    "type": "tsc --emitDeclarationOnly"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  },
+  "main": "./dist/Zeus.umd.js",
+  "module": "./dist/Zeus.es.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/Zeus.es.js",
+      "require": "./dist/Zeus.umd.js"
+    }
+  }
+}

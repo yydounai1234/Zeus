@@ -59,19 +59,3 @@ type ZeusOption = Partial<{
   patten: RegExp
 }
 ```
-
-## 本地调试
-
-* 下载依赖
-```javascript
-    pnpm install
-```
-* 运行脚本
-```javascript
-    pnpm run plugin:dev
-    pnpm run demo:dev
-```
-
-## License
-
-MIT License
