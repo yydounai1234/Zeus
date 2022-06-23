@@ -7,11 +7,10 @@
     "vite:dev": "pnpm run dev --filter zeus-vite",
     "vite:build": "pnpm run build --filter zeus-vite",
     "vite:preview": "pnpm run preview --filter zeus-vite",
-    "plugin:dev": "pnpm run dev:zeus --filter zeus-plugin",
-    "plugin:build": "pnpm run build:zeus --filter zeus-plugin",
-    "plugin:type": "pnpm run type --filter zeus-plugin",
-    "sw:dev": "pnpm run dev:sw --filter zeus-plugin",
-    "sw:build": "pnpm run build:sw --filter zeus-plugin"
+    "plugin:zeus": "pnpm run dev:zeus --filter zeus-plugin",
+    "plugin:worker": "pnpm run dev:worker --filter zeus-plugin",
+    "plugin:build": "pnpm run build --filter zeus-plugin",
+    "plugin:type": "pnpm run type --filter zeus-plugin"
   },
   "repository": {
     "type": "git",

@@ -1,24 +1,17 @@
 // @ts-ignore
-import { fstat } from "fs";
-import swTemplate from "../sw/zeus-plugin.iife.js?raw";
-import * as fs from "fs";
+import swTemplate from '../../zeus-plugin.iife?raw'
 interface ZeusOption {
-  html?: string;
-  scope?: string;
-  prefix?: string;
-  swName?: string;
-  /**
-   * 缓存版本号
-   */
-  cacheVersion: number;
+  html: string;
+  scope: string;
+  prefix: string;
+  swName: string;
 }
 
 const defaultZeusOption = {
   html: "index.html",
   prefix: "",
   scope: "",
-  swName: "sw",
-  cacheVersion: 1,
+  swName: "sw.js",
 };
 
 function applyServiceWorkerRegistration(
@@ -34,7 +27,7 @@ function applyServiceWorkerRegistration(
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
       navigator.serviceWorker
-        .register('/${addPrefix ? `${prefix}/` : ""}${swName}.js'${
+        .register('/${addPrefix ? `${prefix}/` : ""}${swName}'${
     addScope ? `,{ scope: './${scope}' }` : ""
   })
         .then(function() {
@@ -49,20 +42,12 @@ function applyServiceWorkerRegistration(
 }
 
 export default (option: ZeusOption = defaultZeusOption) => {
-  const _option = { ...defaultZeusOption, ...option };
-  const virtualModuleId = `/${_option.swName}.js`;
+  const virtualModuleId = "/sw.js";
   const resolvedVirtualModuleId = "\0" + virtualModuleId;
+  const _option = { ...defaultZeusOption, ...option };
   return {
-    name: "vite-plugin-zeus",
-    transformIndexHtml(html: string) {
-      const _html = applyServiceWorkerRegistration(
-        html,
-        _option.scope,
-        _option.prefix,
-        _option.swName
-      );
-      return _html;
-    },
+    name: "rollup-plugin-zeus",
+    enforce: "post",
     resolveId(id: string) {
       if (id === virtualModuleId) {
         return resolvedVirtualModuleId;
@@ -70,21 +55,17 @@ export default (option: ZeusOption = defaultZeusOption) => {
     },
     load(id: string) {
       if (id === resolvedVirtualModuleId) {
-        const template = swTemplate.replace(
-          /cacheVersion/g,
-          String(_option.cacheVersion)
-        );
-        return template;
+        return swTemplate;
       }
     },
-    writeBundle(options: any) {
-      const template = swTemplate.replace(
-        /cacheVersion/g,
-        String(_option.cacheVersion)
+    generateBundle(_: any, bundle: any, t: any) {
+      const htmlSource = bundle[_option.html].source;
+      bundle[_option.html].source = applyServiceWorkerRegistration(
+        htmlSource,
+        _option.scope,
+        _option.prefix,
+        _option.swName
       );
-      fs.writeFileSync(`${options.dir}/${_option.swName}`, template, {
-        encoding: "utf8",
-      });
     },
   };
 };

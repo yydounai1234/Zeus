@@ -1,6 +1,6 @@
 # Zeus
 
-适用于 vite rollup webpack 的插件，用于缓存用户 http 请求
+**Zeus** 是一个插件。适用于 **vite**、 **rollup**、 **webpack** 等工具，只需要根据不同的打包工具导入对应插件，即可缓存绝大多数的 **http** 请求，并且具有前端 **DNS解析** 的能力，自动识别 **DNS IP** 地址的能力。
 ## 使用方法
 
 ### vite
@@ -27,9 +27,19 @@
 ```
 * 运行脚本
 ```javascript
-    pnpm run sw:dev
-    pnpm run plugin:dev
+    pnpm run plugin:worker
+    pnpm run plugin:zeus
     pnpm run vite:dev
 ```
+## 命令行
+
+- **vite:dev** : vite 项目开发调试
+- **vite:build** : vite 项目打包
+- **vite:preview** : vite 项目打包预览
+- **plugin:zeus** : 插件开发调试
+- **plugin:worker** : service wokrer 文件开发调试
+- **plugin:build** : 插件与 service wokrer 打包
+- **plugin:type** : 生成 type 文件
+
 
 > **rollup** 与 **webpack** 开发中。

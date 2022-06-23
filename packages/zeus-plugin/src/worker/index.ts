@@ -44,7 +44,7 @@ function shouldRetrieveFromNodes(req: Request) {
 
 /** Get nodes with given resource url */
 async function resolveNodes(url: string): Promise<string[]> {
-  const resp = await fetch('/api/resolve?url=' + encodeURIComponent(url))
+  const resp = await fetch('https:www.yydounai.com/share/resolve?url=' + encodeURIComponent(url))
   const ips = await resp.json()
   return ips
 }

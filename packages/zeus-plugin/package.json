@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "scripts": {
     "dev:zeus": "vite build -w --config ./vite.plugin.config.ts",
-    "dev:sw": "vite build -w --config ./vite.sw.config.ts",
-    "build:zeus": "tsc --emitDeclarationOnly && vite build --config ./vite.plugin.config.ts",
-    "build:sw": "tsc --emitDeclarationOnly && vite build --config ./vite.sw.config.ts",
+    "dev:worker": "vite build -w --config ./vite.worker.config.ts",
+    "build": "npm run type && npm run build:worker && npm run build:zeus",
+    "build:zeus": "vite build --config ./vite.plugin.config.ts",
+    "build:worker": "vite build --config ./vite.worker.config.ts",
     "type": "tsc --emitDeclarationOnly"
   },
   "devDependencies": {
