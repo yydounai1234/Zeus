@@ -6,7 +6,7 @@
 
 * 下载插件
 ```javascript
-    npm install zeus-plugin --save-dev
+npm install zeus-plugin --save-dev
 ```
 * 在 **vite.config.ts** 中添加插件
 
