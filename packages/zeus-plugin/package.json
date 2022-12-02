@@ -20,9 +20,5 @@
       "import": "./dist/Zeus.es.js",
       "require": "./dist/Zeus.umd.js"
     }
-  },
-  "dependencies": {
-    "parse5": "^7.0.0",
-    "terser": "^5.14.1"
   }
 }

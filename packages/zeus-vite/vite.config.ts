@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vitePlugin({
+      prefix: "Zeus",
       cacheVersion: 1,
       swVersion: 1,
       appShellFiles: ["/source.webp"],
