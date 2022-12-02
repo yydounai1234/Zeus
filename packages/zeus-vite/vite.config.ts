@@ -8,8 +8,8 @@ export default defineConfig({
       prefix: '',
       scope: '',
       swName: 'sw',
-      cacheVersion: 12,
-      swVersion: 17,
+      cacheVersion: 1,
+      swVersion: 1,
       appShellFiles: ["/source.webp"],
       patten: /image|png/
     }),

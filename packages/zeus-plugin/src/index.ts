@@ -112,7 +112,7 @@ export default (option: ZeusOption) => {
         .replace(/zeus_cacheVersion/g,String(_option.cacheVersion))
         .replace(/zeus_appShellFiles/g, JSON.stringify(_option.appShellFiles))
         .replace(/zeus_patten/g, String(_option.patten))
-      fs.writeFileSync(`${options.dir}/${_option.swName}`, template, {
+      fs.writeFileSync(`${options.dir}/${_option.swName}_${_option.swVersion}.js`, template, {
         encoding: 'utf8',
       })
     },
