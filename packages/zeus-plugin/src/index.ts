@@ -9,6 +9,14 @@ interface ZeusOption {
    * 缓存版本号
    */
   cacheVersion: number
+  /**
+   * 初始缓存文件
+   */
+  appShellFiles: string[]
+  /**
+   * 缓存请求正则
+   */
+  patten: RegExp
 }
 
 const defaultZeusOption = {
@@ -76,17 +84,19 @@ export default (option: ZeusOption = defaultZeusOption) => {
     },
     load(id: string) {
       if (id === resolvedVirtualModuleId) {
-        const template = swTemplate.replace(
-          /cacheVersion/g,
-          String(_option.cacheVersion)
-        )
+        const template = swTemplate
+          .replace(/zeus_cacheVersion/g, String(_option.cacheVersion))
+          .replace(/zeus_appShellFiles/g, String(_option.appShellFiles))
+          .replace(/zeus_patten/g, String(_option.patten))
         return template
       }
     },
     writeBundle(options: any) {
       const template = swTemplate.replace(
-        /cacheVersion/g,
+        /zeus_cacheVersion/g,
         String(_option.cacheVersion)
+          .replace(/zeus_appShellFiles/g, String(_option.appShellFiles))
+          .replace(/zeus_patten/g, String(_option.patten))
       )
       fs.writeFileSync(`${options.dir}/${_option.swName}`, template, {
         encoding: 'utf8',

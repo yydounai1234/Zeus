@@ -6,10 +6,10 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'Zeus',
-      fileName: 'Zeus'
+      fileName: 'Zeus',
     },
     rollupOptions: {
-      external: ["fs", "typescript"]
-    }
-  }
+      external: ['fs'],
+    },
+  },
 })

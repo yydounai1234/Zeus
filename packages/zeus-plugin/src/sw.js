@@ -1,8 +1,8 @@
-let filesCacheName = cacheVersion
+let filesCacheName = zeus_cacheVersion
 
-let appShellFiles = []
+let appShellFiles = zeus_appShellFiles
 
-let patten = /img|images/
+let patten = zeus_patten
 
 self.addEventListener('install', function (e) {
   e.waitUntil(
