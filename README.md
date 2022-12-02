@@ -1,23 +1,64 @@
 # Zeus
 
-**Zeus** 是一个插件。适用于 **vite**、 **rollup**、 **webpack** 等工具，只需要根据不同的打包工具导入对应插件，即可缓存绝大多数的 **http** 请求，并且具有前端 **DNS解析** 的能力，自动识别 **DNS IP** 地址的能力。
-## 使用方法
+**Zeus** 是一个 **vite** 插件，通过简单的插件引入，轻松获得缓存 app 本地文件与 fetch 请求的资源的能力，可以通过 []() 查看示例。
 
-### vite
+## 使用方法
 
 * 下载插件
 ```javascript
-    npm install zeus-plugin
+    npm install zeus-plugin --save-dev
 ```
 * 在 **vite.config.ts** 中添加插件
-```javascript
-    import { vitePlugin as zeus } from 'zeus-plugin'
-    plugins: [...other plugins, zeus({
-    cacheVersion: 100
-  })]
+
+```typescript
+import zeusPlugin from 'zeus-plugin'
+plugins: [...other plugins, zeusPlugin({
+    /** cache 版本号 */
+    cacheVersion: 1,
+    /** sw 版本号 */
+    swVersion: 1,
+    /** 初始缓存文件 */
+    appShellFiles: ["/source.webp"],
+    /** 拦截缓存文件的正则 */
+    patten: /image|png/
+})]
 ```
 
-简单的一步，即可在本地调试以及生产环境中使用缓存功能啦。
+完整配置如下：
+
+```typescript
+type ZeusOption = Partial<{
+  /**
+   * 作用域
+   */
+  scope: string
+  /**
+   * 前缀
+   */
+  prefix: string
+  /**
+   * SW 名
+   */
+  swName: string
+}> & {
+  /**
+   * SW 版本号
+   */
+  swVersion: string
+  /**
+   * 缓存版本号
+   */
+  cacheVersion: string
+  /**
+   * 初始缓存文件
+   */
+  appShellFiles: string[]
+  /**
+   * 缓存请求正则
+   */
+  patten: RegExp
+}
+```
 
 ## 本地调试
 
@@ -27,19 +68,10 @@
 ```
 * 运行脚本
 ```javascript
-    pnpm run plugin:worker
-    pnpm run plugin:zeus
-    pnpm run vite:dev
+    pnpm run plugin:dev
+    pnpm run demo:dev
 ```
-## 命令行
 
-- **vite:dev** : vite 项目开发调试
-- **vite:build** : vite 项目打包
-- **vite:preview** : vite 项目打包预览
-- **plugin:zeus** : 插件开发调试
-- **plugin:worker** : service wokrer 文件开发调试
-- **plugin:build** : 插件与 service wokrer 打包
-- **plugin:type** : 生成 type 文件
+## License
 
-
-> **rollup** 与 **webpack** 开发中。
+MIT License

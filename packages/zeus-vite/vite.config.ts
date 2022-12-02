@@ -5,9 +5,6 @@ export default defineConfig({
   plugins: [
     vue(),
     vitePlugin({
-      prefix: '',
-      scope: '',
-      swName: 'sw',
       cacheVersion: 1,
       swVersion: 1,
       appShellFiles: ["/source.webp"],
