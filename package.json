@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "vite:dev": "pnpm run dev --filter zeus-vite",
-    "vite:build": "pnpm run build --filter zeus-vite",
-    "vite:preview": "pnpm run preview --filter zeus-vite",
-    "plugin:zeus": "pnpm run dev:zeus --filter zeus-plugin",
-    "plugin:worker": "pnpm run dev:worker --filter zeus-plugin",
-    "plugin:build": "pnpm run build --filter zeus-plugin",
-    "plugin:type": "pnpm run type --filter zeus-plugin"
+    "demo:dev": "pnpm --filter zeus-vite run dev",
+    "demo:build": "pnpm --filter zeus-vite run build",
+    "demo:preview": "pnpm --filter zeus-vite run preview",
+    "plugin:dev": "pnpm --filter zeus-plugin run dev",
+    "plugin:build": "pnpm --filter zeus-plugin run build",
+    "plugin:type": "pnpm --filter zeus-plugin run type"
   },
   "repository": {
     "type": "git",
