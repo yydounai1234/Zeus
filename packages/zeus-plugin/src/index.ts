@@ -1,5 +1,4 @@
 import swTemplate from './sw?raw'
-console.log(swTemplate)
 import * as fs from 'fs'
 interface ZeusOption {
   html?: string
@@ -20,12 +19,20 @@ const defaultZeusOption = {
   cacheVersion: 1,
 }
 
-function applyServiceWorkerRegistration(
+/**
+ *
+ * @param htmlString
+ * @param scope
+ * @param prefix
+ * @param swName
+ * @returns
+ */
+const applyServiceWorkerRegistration = (
   htmlString: string,
   scope: string,
   prefix: string,
   swName: string
-) {
+) => {
   const addScope = !!scope
   const addPrefix = !!prefix
   return `${htmlString}

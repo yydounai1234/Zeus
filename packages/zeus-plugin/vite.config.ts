@@ -9,7 +9,7 @@ export default defineConfig({
       fileName: 'Zeus'
     },
     rollupOptions: {
-      external: "fs"
+      external: ["fs", "typescript"]
     }
   }
 })

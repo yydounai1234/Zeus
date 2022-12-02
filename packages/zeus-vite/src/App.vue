@@ -25,7 +25,7 @@
       </p>
 
       <p :class="$style.description">
-        Resources below are expected to be retrieved from site
+        Resources below are expected to be retrieved from site2
         <code>{originalHost}</code>, which does not exist. Instead they are
         retrieved from site <code>{targetHost}</code> under the hood.
       </p>
@@ -33,33 +33,33 @@
       <ul :class="$style.grid">
         <li :class="$style.card">
           <h2>Image</h2>
-          <img alt="Fabric" src="https://sanzo.io/sanzo/samples/fabric.jpg" />
+          <img alt="Fabric" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKNtx8LZtmltKtApPNi14S7IzegsOxnB98r9KP1jsV0w&s" />
           <UrlInfo path="/sanzo/samples/fabric.jpg" />
         </li>
         <li :class="$style.card">
           <h2>Video</h2>
-          <video
+          <!-- <video
             controls
             src="https://sanzo.io/sanzo/samples/forest.mp4"
-          ></video>
+          ></video> -->
           <UrlInfo path="/sanzo/samples/forest.mp4" />
         </li>
 
         <li :class="$style.card">
           <h2>Audio</h2>
-          <audio
+          <!-- <audio
             controls
             src="https://sanzo.io/sanzo/samples/ukulele.mp3"
-          ></audio>
+          ></audio> -->
           <UrlInfo path="/sanzo/samples/ukulele.mp3" />
         </li>
 
         <li :class="$style.card">
           <h2>Long Video</h2>
-          <video
+          <!-- <video
             controls
             src="https://sanzo.io/sanzo/samples/the-internets-own-boy.ogv"
-          ></video>
+          ></video> -->
           <UrlInfo path="/sanzo/samples/the-internets-own-boy.ogv" />
         </li>
       </ul>
