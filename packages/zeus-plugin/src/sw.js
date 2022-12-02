@@ -5,9 +5,10 @@ let appShellFiles = zeus_appShellFiles
 let patten = zeus_patten
 
 self.addEventListener('install', function (e) {
+  self.skipWaiting()
   e.waitUntil(
     caches.open(filesCacheName).then((cache) => {
-      console.debug('[zeus] 缓存所有文件:', appShellFiles.toString())
+      console.debug('[zeus] 缓存所有文件:' + JSON.stringify(appShellFiles))
       return cache.addAll(appShellFiles)
     })
   )

@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vitePlugin from 'zeus-plugin'
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
@@ -9,9 +8,9 @@ export default defineConfig({
       prefix: '',
       scope: '',
       swName: 'sw',
-      cacheVersion: 3,
-      swVersion: 7,
-      appShellFiles: [],
+      cacheVersion: 12,
+      swVersion: 17,
+      appShellFiles: ["/source.webp"],
       patten: /image|png/
     }),
   ],
