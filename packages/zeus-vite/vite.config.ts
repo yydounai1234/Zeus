@@ -6,11 +6,13 @@ export default defineConfig({
   plugins: [
     vue(),
     vitePlugin({
-      html: 'index.html',
       prefix: '',
       scope: '',
-      swName: 'sw7',
+      swName: 'sw',
       cacheVersion: 3,
+      swVersion: 7,
+      appShellFiles: [],
+      patten: /image|png/
     }),
   ],
 })
