@@ -1,6 +1,6 @@
 # Zeus
 
-**Zeus** 是一个 **vite** 插件，通过简单的插件引入，轻松获得缓存 app 本地文件与 fetch 请求的资源的能力，可以通过 []() 查看示例。
+**Zeus** 是一个 **vite** 插件，通过简单的插件引入，轻松获得缓存 app 本地文件与 fetch 请求的资源的能力，可以通过 [Zeus](https://yydounai1234.github.io/Zeus/) 查看示例。
 
 ## 使用方法
 
