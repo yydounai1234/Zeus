@@ -1,7 +1,15 @@
 {
   "name": "zeus-plugin",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
+  "files": [
+    "dist/*.js",
+    "types/*.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yydounai1234/Zeus.git"
+  },
   "scripts": {
     "dev": "vite build -w",
     "build": "vite build",
