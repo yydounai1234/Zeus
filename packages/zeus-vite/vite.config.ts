@@ -9,7 +9,7 @@ export default defineConfig({
       prefix: "Zeus",
       cacheVersion: 1,
       swVersion: 1,
-      appShellFiles: ["/source.webp"],
+      appShellFiles: ["./source.webp"],
       patten: /image|png/
     }),
   ],
